@@ -1,0 +1,72 @@
+Hammer Network - 1.0 - README file
+----------------------------------
+
+- About
+
+Hammer Network is an application writen in Qt 4.8. It's main purpose in this
+planet is to make the usage of WonderShaper a little bit less difficult for
+the users.
+
+   WonderShaper is a GNU/Linux command line tool to control the network
+speed usage. Some advantages of WonderShaper over other tools are:
+
+   - "On the fly" control. There is no need to reboot the system or to restart
+     an application.
+   - Easy sintax. Interface name, upload and download speeds, and thats it.
+   
+Some bad sides of WonderShaper:
+
+   - Can't control individual applications. The speed control is for the whole
+     system.
+   - Requires the root password. Run as root.
+   - The network speed control is not exact. The speed will be from -10 to +10
+     kilobytes from the speed specified.
+   
+Hammer Network attempts to create an interface to the user to simplify the
+usage of WonderShaper. The interface detects the current network interfaces and
+display some basic information.
+
+   The application asks for the root password using KDESU, but such behavior is
+configurable, since the root runner can be changed, and even the option to run
+with a root runner at all (for the cases of making WonderShaper accessible for
+the normal users, or if Hammer Network is run as root).
+
+   The program stores per-user configuration. Has two available languages (english
+and spanish), and cam be configured a lot.
+
+
+
+- Compile and install
+
+Hammer Network needs to be compiled and can be installed. To compile it, the user
+can use these commands (as normal users):
+
+   $ qmake
+   $ make
+   
+   The Qt project file is already configured as needed. The "qmake" command will expand
+any needed folder and prepare some Makefile files according to your system. The
+command "make" will compile the program. The final file must be a binary file, called
+"hammernetwork".
+
+   The user, if it wants, can use a script called "compile.sh". Such file is a Bash
+script. It will run the previous two commands.
+
+   To install the program, the user can use a script file named "install.sh". Such file
+must be executed as root:
+
+   # ./install.sh
+   
+The script will copy the binary file to /usr/bin, the menu entry file to /usr/share/applications/,
+and the application icon to /usr/share/icons/.
+
+   To perform a manual installation, copy the file resources/menus/hammer-network.desktop to
+/usr/share/applications/, the file resources/img/icon/main-128x128.png to /usr/share/icons/
+as "hammer-network.png", and the file "hammernetwork" (the binary file) to /usr/bin/.
+
+
+
+
+- Uninstall
+
+To uninstall Hammer Network, just remove the three files specified in the previous section.

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Hammer Network
+GenericName=Network Speed Control
+Comment=System Network Speed Control, powered by WonderShaper
+Icon=/usr/share/icons/hammer-network.png
+Exec=/usr/bin/hammernetwork
+Encoding=UTF-8
+Terminal=false
